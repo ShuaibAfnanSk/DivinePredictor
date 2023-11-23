@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@200;400;500;600;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section>
+        <form action="/predict" method="post">
+            <div class="row">
+                <div class="stamp">
+                    <label for="bedrooms">bedrooms</label>
+                    <input type="text" name="bedrooms" required>
+                </div>
+                <div class="stamp">
+                    <label for="bathrooms">bathrooms</label>
+                    <input type="text" name="bathrooms" required>
+                </div>
+                <div class="stamp">
+                    <label for="floors">floors</label>
+                    <input type="text" name="floors" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="stamp">
+                    <label for="sqft_living">sqft_living</label>
+                    <input type="text" name="sqft_living" required>
+                </div>
+                <div class="stamp">
+                    <label for="sqft_lot">sqft_lot</label>
+                    <input type="text" name="sqft_lot" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="stamp">
+                    <label for="sqft_basement">sqft_basement</label>
+                    <input type="text" name="sqft_basement" required>
+                </div>
+                <div class="stamp">
+                    <label for="sqft_above">sqft_above</label>
+                    <input type="text" name="sqft_above" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="stamp">
+                    <label for="condition">condition</label>
+                    <input type="text" name="condition" required>
+                </div>
+                <div class="stamp">
+                    <label for="waterfront">waterfront</label>
+                    <input type="text" name="waterfront" required>
+                </div>
+                <div class="stamp">
+                    <label for="view">view</label>
+                    <input type="text" name="view" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="stamp">
+                    <label for="yr_built">yr_built</label>
+                    <input type="text" name="yr_built" required>
+                </div>
+                <div class="stamp">
+                    <label for="yr_renovated">yr_renovated</label>
+                    <input type="text" name="yr_renovated" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="stamp">
+                    <label for="city">city</label>
+                    <input type="text" name="city" required>
+                </div>
+                <div class="stamp">
+                    <label for="statezip">statezip</label>
+                    <input type="text" name="statezip" required>
+                </div>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+
+        <div class="result">
+            {% if prediction is defined %}
+            <h2>Prediction Result:</h2>
+            <p>The predicted value is: <span class="predict">{{ prediction }}</span></p>
+            {% endif %}
+        </div>
+
+    </section>
+</body>
+
+</html>
