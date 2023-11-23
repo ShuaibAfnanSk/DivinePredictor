@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 
 app = Flask(__name__)
 
-df = pd.read_csv("divine.properties.alt.csv")
+df = pd.read_csv("./divine.properties.alt.csv")
 
 df = df[["price","bedrooms","bathrooms","sqft_living","sqft_lot","city","statezip","sqft_basement","sqft_above","view","floors","condition","waterfront","yr_built","yr_renovated"]]
 
